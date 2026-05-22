@@ -106,7 +106,7 @@ tarea.addEventListener("click", (event) => {
 
         TareaABuscar.estaCompletado =
             !TareaABuscar.estaCompletado
-
+    localStorage.setItem('data', JSON.stringify(data))
         if (TareaABuscar.estaCompletado) {
 
             event.target.nextSibling.classList.add(
@@ -127,6 +127,7 @@ tarea.addEventListener("click", (event) => {
         event.target.parentElement.remove()
 
         data = data.filter( item => item.id != event.target.id)
+            localStorage.setItem('data', JSON.stringify(data))
     }
 })
 
